@@ -1,0 +1,404 @@
+body{
+font-family: Arial;
+margin:0;
+background:lightblue;
+}
+
+header{
+background:#002f6c;
+color:white;
+text-align:center;
+padding:20px;
+}
+.main-header{
+    text-align:center;
+    padding:50px;
+    /* Split background: left blue, right orange */
+    background: linear-gradient(to right, #002f6c 50%, #002f6c 50%);
+    color:white;
+}
+
+.main-header h1{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.main-header p{
+    font-size:20px;
+    color:#fff;
+}
+nav{
+background:#00b894;
+text-align:center;
+padding:20px;
+}
+
+nav a{
+color:blue;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+color:yellow;
+}
+/* Hero section */
+.hero {
+    height: 80vh; /* big rectangle */
+    background: url("images/background.jpg") no-repeat center center;
+    background-size: cover; /* cover entire hero rectangle */
+    display: flex;
+    justify-content: center; /* horizontal center */
+    align-items: center;     /* vertical center */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+/* Animated gradient overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(10,79,163,0.5), rgba(255,102,0,0.5));
+    animation: gradientShift 8s infinite alternate;
+    z-index: 0;
+}
+
+/* Gradient animation keyframes */
+@keyframes gradientShift {
+    0% {
+        background: linear-gradient(45deg, rgba(10,79,163,0.5), rgba(255,102,0,0.5));
+    }
+    50% {
+        background: linear-gradient(45deg, rgba(255,102,0,0.5), rgba(10,79,163,0.5));
+    }
+    100% {
+        background: linear-gradient(45deg, rgba(10,79,163,0.5), rgba(255,102,0,0.5));
+    }
+}
+
+/* Hero text container */
+.hero-text {
+    position: relative;
+    z-index: 1; /* above overlay */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Hero heading */
+.hero-text h1 {
+    font-size: 50px;
+    margin: 0;
+}
+
+/* Hero paragraph */
+.hero-text p {
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Apply Now button with pulse and hover */
+.btn {
+    background: orange;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+/* Button pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 5px 10px rgba(255,140,0,0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(255,140,0,0.6);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 5px 10px rgba(255,140,0,0.4);
+    }
+}
+
+/* Button hover effect */
+.btn:hover {
+    transform: scale(1.1);
+    background: #ff8c00;
+    box-shadow: 0 12px 25px rgba(255,140,0,0.7);
+}/* Container for both sections */
+.info-countries {
+    display: flex;
+    flex-wrap: wrap; /* allows stacking on mobile */
+    gap: 40px;
+    justify-content: space-around;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #0a4fa3, #ff6600); /* vibrant gradient */
+    border-radius: 15px;
+    color: white;
+}
+
+/* Individual blocks */
+.info-countries .why-choose,
+.info-countries .countries {
+    flex: 1 1 400px; /* responsive width */
+    background: rgba(255,255,255,0.1); /* semi-transparent overlay */
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* Headings */
+.info-countries h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Paragraphs */
+.info-countries p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Lists */
+.info-countries ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-countries li {
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+/* Contact Section Styling */
+.contact {
+    background: url("images/background.jpg") no-repeat center center; /* your photo */
+    background-size: cover; /* make it cover the entire section */
+    position: relative; /* for overlay */
+    color:black; /* make text visible */
+    text-align: center;
+    padding: 80px 20px;
+    border-radius: 15px;
+    margin: 50px auto;
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
+}
+
+/* Overlay for readability */
+.contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #002f6c; /* dark semi-transparent overlay */
+    z-index: 0;
+}
+
+/* Ensure text & form appear above overlay */
+.contact h2,
+.contact p,
+.contact form {
+    position: relative;
+    z-index: 1;
+}
+
+/* Form Styling */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+
+.contact textarea {
+    height: 150px;
+    resize: none;
+}
+
+/* Submit Button */
+.contact button {
+    background: green;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact button:hover {
+    background: #ffa500;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255,165,0,0.5);
+}
+body{
+margin:0;
+font-family: Arial, sans-serif;
+background-image: url("images/register.jpg");
+background-size: cover;
+background-position: center;
+color: white;
+}
+
+nav{
+background-color: blue;
+padding:15px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:20px;
+font-size:18px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:yellow;
+}
+
+.register-container{
+width:400px;
+margin:80px auto;
+background-color: rgba(0,0,0,0.7);
+padding:30px;
+border-radius:10px;
+}
+
+h2{
+text-align:center;
+}
+
+input, select{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:none;
+border-radius:5px;
+}
+
+button{
+width:100%;
+padding:12px;
+background-color:green;
+border:none;
+font-size:18px;
+color:white;
+cursor:pointer;
+border-radius:5px;
+}
+footer{
+background-color: rgba(0,0,0,0.8);
+color:white;
+text-align:center;
+padding:20px;
+margin-top:50px;
+font-size:14px;
+}
+
+button:hover{
+background-color:darkorange;
+}
+
+.btn{
+background:green;
+color:white;
+padding:12px 25px;
+text-decoration:none;
+border-radius:5px;
+}
+
+.about-section{
+padding:40px;
+margin:20px;
+background:lightblue;
+border-radius:10px;
+line-height:1.6;
+}
+
+.about-section h2{
+color:#002f6c;
+margin-bottom:15px;
+}
+
+.about-section h3{
+color:#00b894;
+margin-top:20px;
+}
+
+
+.services{
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+}
+
+.service{
+    width: 300px;
+    text-align: center;
+}
+
+.service img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.countries{
+text-align:center;
+padding:40px;
+}
+
+.country-box{
+border:1px solid grey;
+padding:20px;
+margin:20px;
+display:inline-block;
+width:250px;
+border-radius:10px;
+background:lightblue;
+}
+
+.country-box img{
+width:100%;
+height:150px;
+border-radius:5px;
+}
+
+
+
+footer{
+background:#002f6c;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
