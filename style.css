@@ -183,8 +183,8 @@ color:yellow;
     font-weight: bold;
     font-size: 16px;
 }
-/* Contact Section Styling */
-.contact {
+/* Contact-us Section Styling */
+.contact-us {
     background: url("images/background.jpg") no-repeat center center; /* your photo */
     background-size: cover; /* make it cover the entire section */
     position: relative; /* for overlay */
@@ -199,7 +199,7 @@ color:yellow;
 }
 
 /* Overlay for readability */
-.contact::before {
+.contact-us::before {
     content: "";
     position: absolute;
     top: 0;
@@ -211,9 +211,9 @@ color:yellow;
 }
 
 /* Ensure text & form appear above overlay */
-.contact h2,
-.contact p,
-.contact form {
+.contact-us h2,
+.contact-us p,
+.contact-us form {
     position: relative;
     z-index: 1;
 }
@@ -226,8 +226,8 @@ color:yellow;
     gap: 20px;
 }
 
-.contact input,
-.contact textarea {
+.contact-us input,
+.contact-ustextarea {
     width: 100%;
     max-width: 500px;
     padding: 15px;
@@ -236,13 +236,13 @@ color:yellow;
     font-size: 16px;
 }
 
-.contact textarea {
+.contact-ustextarea {
     height: 150px;
     resize: none;
 }
 
 /* Submit Button */
-.contact button {
+.contact-usbutton {
     background: green;
     color: white;
     padding: 15px 30px;
@@ -253,7 +253,7 @@ color:yellow;
     transition: all 0.3s ease;
 }
 
-.contact button:hover {
+.contact-us button:hover {
     background: #ffa500;
     transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(255,165,0,0.5);
